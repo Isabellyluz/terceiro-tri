@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Frutas</title>
+<style>
+body {
+ font-family: Arial, sans-serif;
+}
+
+h1 {
+ text-align: center;
+}
+
+.gallery {
+ display: flex;
+ flex-wrap: wrap;
+ justify-content: center;
+}
+
+.gallery img {
+ width: 100%;
+ max-width: 300px;
+ height: auto;
+ margin: 10px;
+ border: 1px solid #ccc;
+ box-shadow: 2px 2px 6px 0px rgba(0,0,0,0.20);
+}
+
+@media (min-width: 576px) {
+ .gallery img {
+ width: 50%;
+ max-width: 500px;
+ }
+}
+
+@media (min-width: 768px) {
+ .gallery img {
+ width: 33.33%;
+ max-width: 700px;
+ }
+}
+
+@media (min-width: 992px) {
+ .gallery img {
+ width: 25%;
+ max-width: 800px;
+ }
+}
+
+@media (min-width: 1200px) {
+ .gallery img {
+ width: 20%;
+ max-width: 900px;
+ }
+}
+</style>
+<script>
+window.onload = function() {
+ var imgFolder = 'imagens/frutas/'; // Nome da pasta onde estão as imagens
+ var imgCount = 10; // Número total de imagens na pasta
+ var gallery = document.getElementById('gallery');
+
+ for (var i = 1; i <= imgCount; i++) {
+ var img = document.createElement('img');
+ img.src = imgFolder + 'fruta' + i + '.jpg';
+ img.alt = 'Fruta ' + i;
+ gallery.appendChild(img);
+ }
+};
+</script>
+</head>
+<body>
+
+<h1>Frutas</h1>
+
+<p>Esta é uma galeria de fotos de frutas.</p>
+
+<div class="gallery" id="gallery">
+</div>
+
+</body>
+</html>
